@@ -1,9 +1,12 @@
 import React from 'react'
 
-const TodoCard = () => {
+const TodoCard = (props) => {
+  console.log("TodoCard -> props", props)
+  const { task } = props
   return (
     <div>
-      <h1>THIS IS A TODOCARD BEING RENDERED FROM THE TODOCONTAINER</h1>
+      <h3>{task.item}</h3>
+      <p>{JSON.stringify(task.completed)}</p>
     </div>
   )
 }
