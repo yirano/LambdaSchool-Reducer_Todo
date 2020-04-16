@@ -16,6 +16,7 @@ export default function TodoContainer(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: 'ADD', payload: input })
+    window.localStorage.setItem('task', initialState)
   }
   return (
     <>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 let initialState = {
 
   tasks: [
@@ -21,6 +19,8 @@ const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
       return { tasks: [...state.tasks, { item: action.payload, completed: false, id: Date.now() }] }
+    case 'DELETE':
+      return { tasks: state.tasks.filter(task => task.id == action.payload) }
     default:
       return state;
   }
